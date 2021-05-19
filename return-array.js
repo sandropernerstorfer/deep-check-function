@@ -9,11 +9,11 @@ function deepCheck(value1, value2, checkType = false){
         
         if( keys1.length !== keys2.length ) return [false, `${value1} and ${value2} : different lengths`];
 
-        for(let i = 0; i < keys1.length; i++){
+        for( i in keys1 ){
             if(keys1[i] != keys2[i]) return [false, `${keys1[i]} and ${keys2[i]} : different property names`];
         }
 
-        for(let i = 0; i < keys1.length; i++){
+        for( i in keys1 ){
             if(values1[i] !== values2[i]){
                 let seperateCheck = deepCheck(values1[i], values2[i], checkType);
                 if(seperateCheck[0] == false) return seperateCheck;

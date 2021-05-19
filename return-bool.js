@@ -9,11 +9,11 @@ function deepCheck(value1, value2, checkType = false){
 
         if( keys1.length !== keys2.length ) return false;
 
-        for(let i = 0; i < keys1.length; i++){          
+        for( i in keys1 ){
             if(keys1[i] != keys2[i]) return false;
         }
 
-        for(let i = 0; i < keys1.length; i++){
+        for( i in keys1 ){
             if(values1[i] !== values2[i]){
                 let newCheck = deepCheck(values1[i], values2[i], checkType);
                 if(!newCheck) return newCheck;
